@@ -23,6 +23,7 @@ ENV TIMEZONE=${timezone:-"Asia/Shanghai"} \
 RUN set -ex \
     # install composer
     && cd /tmp \
+    && apk add wget \
     && wget https://github.com/composer/composer/releases/download/${COMPOSER_VERSION}/composer.phar \
     && chmod u+x composer.phar \
     && mv composer.phar /usr/local/bin/composer \
